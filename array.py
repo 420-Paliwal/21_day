@@ -25,3 +25,13 @@ class Solution:
             n = n//10
             rev_num = (rev_num *10) + ld
         return temp == rev_num
+    
+class Solution:
+    def isArmstrong(self, n):
+        arm = 0
+        temp = n 
+        while(n > 0):
+            ld = n%10
+            n = n//10
+            arm += ld*ld*ld
+        return temp == arm
