@@ -59,3 +59,14 @@ class Solution:
             if n%i == 0:
                 return False
         return True
+
+import math
+class Solution:
+    def GCD(n1, n2):
+        small = n1 if n1 < n2 else n2
+        # print(small)
+        temp = int(math.sqrt(small))+1
+        # print(temp)
+        for i in range(temp, 0, -1):
+            if(n1%i==0 and n2%i==0):
+                return i
