@@ -14,3 +14,14 @@ class Solution:
             n = n//10
             rev_num = (rev_num * 10) + ld
         return rev_num
+    
+
+class Solution:
+    def isPalindrome(self, n):
+        temp = n
+        rev_num = 0
+        while(n>0):
+            ld = n%10
+            n = n//10
+            rev_num = (rev_num *10) + ld
+        return temp == rev_num
