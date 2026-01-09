@@ -35,3 +35,15 @@ class Solution:
             n = n//10
             arm += ld*ld*ld
         return temp == arm
+    
+import math
+class Solution:
+    def divisors(self, n):
+        temp = []
+        for i in range(1,int(math.sqrt(n))+1):
+            if n%i == 0:
+                temp.append(i)
+                if n//i != i:
+                    temp.append(n//i)
+        temp.sort()
+        return temp
