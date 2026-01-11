@@ -20,3 +20,9 @@ class Solution:
         if(N<=0):
             return 0
         return N + self.NnumbersSum(N-1)
+
+class Solution:
+    def factorial(self, n):
+        if (n<= 1):
+            return 1
+        return n*self.factorial(n-1)
