@@ -51,3 +51,10 @@ class Solution:
                 return False
             return check(s, low+1, high-1)
         return check(s, low, high)
+    
+class Solution:
+    def fib(self, n):
+        #your code goes here
+        if (n<= 1):
+            return n
+        return self.fib(n-1) + self.fib(n-2)
