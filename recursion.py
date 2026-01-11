@@ -37,3 +37,17 @@ class Solution:
             arr[low], arr[high] = arr[high], arr[low]
             rev_arr(arr, low+1, high-1)
         return rev_arr(arr, low, high)
+
+class Solution:    
+    def palindromeCheck(self, s):
+        #your code goes here
+        low = 0
+        n = len(s)
+        high = n-1
+        def check(s, low, high):
+            if(low>high):
+                return True
+            if(s[low] != s[high]):
+                return False
+            return check(s, low+1, high-1)
+        return check(s, low, high)
