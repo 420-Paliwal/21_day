@@ -26,3 +26,14 @@ class Solution:
         if (n<= 1):
             return 1
         return n*self.factorial(n-1)
+
+class Solution:
+    def reverse(self, arr: list, n: int) -> None:
+        low = 0
+        high = n-1
+        def rev_arr(arr, low, high):
+            if (low >= high):
+                return arr
+            arr[low], arr[high] = arr[high], arr[low]
+            rev_arr(arr, low+1, high-1)
+        return rev_arr(arr, low, high)
