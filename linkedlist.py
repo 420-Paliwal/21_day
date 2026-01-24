@@ -33,10 +33,30 @@ def deleteAtHead(head):
         return None
     return head.next
 
+def deleteAtEnd(head):
+    if head is None or head.next is None:
+        return None
+    curr = head
+    while curr.next.next:
+        curr = curr.next
+    curr.next = None
+    return head
+
 head = Node(10)
 head.next = Node(20)
 head.next.next = Node(30)
+printList(head)
 head = insertAtHead(head, 5)
+printList(head)
 head = insertAtEnd(head, 40)
+printList(head)
 head = deleteAtHead(head)
+printList(head)
+head = deleteAtEnd(head)
+printList(head)
+head = deleteAtEnd(head)
+printList(head)
+head = deleteAtEnd(head)
+printList(head)
+head = deleteAtEnd(head)
 printList(head)
