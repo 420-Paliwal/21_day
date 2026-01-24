@@ -42,6 +42,26 @@ def deleteAtEnd(head):
     curr.next = None
     return head
 
+def deleteByValue(head, target):
+    if head is None:
+        return None
+    
+    if head.val == target:
+        return head.next
+    
+    prev = None
+    curr = head
+    
+    while curr:
+        if curr.val == target:
+            prev.next = curr.next
+            return head
+        prev = curr
+        curr = curr.next
+    
+    return head
+
+
 head = Node(10)
 head.next = Node(20)
 head.next.next = Node(30)
@@ -54,9 +74,5 @@ head = deleteAtHead(head)
 printList(head)
 head = deleteAtEnd(head)
 printList(head)
-head = deleteAtEnd(head)
-printList(head)
-head = deleteAtEnd(head)
-printList(head)
-head = deleteAtEnd(head)
+head = deleteByValue(head, 20)
 printList(head)
