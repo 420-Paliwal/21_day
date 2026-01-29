@@ -72,7 +72,28 @@ head = insertAtEnd(head, 40)
 printList(head)
 head = deleteAtHead(head)
 printList(head)
-head = deleteAtEnd(head)
-printList(head)
-head = deleteByValue(head, 20)
+# head = deleteAtEnd(head)
+# printList(head)
+# head = deleteByValue(head, 20)
+# printList(head)
+
+def delete_nth_from_end(head, n):
+    dummy = Node(0)
+    dummy.next = head
+
+    fast = dummy
+    slow = dummy
+
+    for _ in range(n+1):
+        fast = fast.next
+
+    while fast:
+        fast = fast.next
+        slow = slow.next
+    
+    slow.next = slow.next.next
+
+    return dummy.next
+
+head = delete_nth_from_end(head, 2)
 printList(head)
