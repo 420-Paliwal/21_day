@@ -97,3 +97,19 @@ def delete_nth_from_end(head, n):
 
 head = delete_nth_from_end(head, 2)
 printList(head)
+
+def rev_list(head):
+
+    prev = None
+    curr = head
+
+    while curr:
+        next_node = curr.next
+        curr.next = prev
+        prev = curr
+        curr = next_node
+    
+    return prev
+
+head = rev_list(head)
+printList(head)
