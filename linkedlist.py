@@ -131,5 +131,31 @@ def detect_cycle(head):
         
     return False
 
-check_list = detect_cycle(head)
-print(check_list)
+
+def find_start_of_cycle(head):
+    if head is None:
+        return None
+    
+    slow = head 
+    fast = head
+
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+
+        if slow == fast:
+            break
+    else:
+        return None
+    
+    ptr1 = head
+    ptr2 = slow
+
+    while ptr1 != ptr2:
+        ptr1 = ptr1.next
+        ptr2 = ptr2.next
+    
+    return ptr1
+
+check_list = find_start_of_cycle(head)
+print("find cycle : ",check_list)
