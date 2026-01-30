@@ -132,7 +132,7 @@ def detect_cycle(head):
     return False
 
 
-def find_start_of_cycle(head):
+def find_start_of_cycle_sorted(head):
     if head is None:
         return None
     
@@ -157,5 +157,5 @@ def find_start_of_cycle(head):
     
     return ptr1
 
-check_list = find_start_of_cycle(head)
+check_list = find_start_of_cycle_sorted(head)
 print("find cycle : ",check_list)
