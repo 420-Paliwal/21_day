@@ -111,8 +111,8 @@ def rev_list(head):
     
     return prev
 
-head = rev_list(head)
-printList(head)
+# head = rev_list(head)
+# printList(head)
 
 
 def detect_cycle(head):
@@ -159,3 +159,22 @@ def find_start_of_cycle(head):
 
 check_list = find_start_of_cycle(head)
 print("find cycle : ",check_list)
+
+def remove_duplicate_sorted(head):
+    if head is None:
+        return None
+    
+    curr = head
+
+    while curr and curr.next:
+        if curr.val == curr.next.val:
+            curr.next = curr.next.next
+        else:
+            curr = curr.next
+
+    return head
+
+head = insertAtEnd(head, 40)
+printList(head)
+head = remove_duplicate_sorted(head)
+printList(head)
