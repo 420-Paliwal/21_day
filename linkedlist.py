@@ -230,3 +230,16 @@ def palindrome_linkedlist(head):
     return True
 
 print("palindrome : ",palindrome_linkedlist(head))
+
+def intersection_list(heada, headb):
+    if not heada or not headb:
+        return None
+    
+    p1 = heada
+    p2 = headb
+
+    while p1 != p2:
+        p1 = p1.next if p1 else headb
+        p2 = p2.next if p2 else heada
+    
+    return p1
