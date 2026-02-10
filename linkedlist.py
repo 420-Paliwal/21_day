@@ -222,9 +222,11 @@ def palindrome_linkedlist(head):
     first = head
     second = prev
     while second:
-        if first.data != second.data:
+        if first.val != second.val:
             return False
         first = first.next
         second = second.next
     
     return True
+
+print("palindrome : ",palindrome_linkedlist(head))
