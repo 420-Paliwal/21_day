@@ -197,3 +197,34 @@ def merge_sorted_list(l1,l2):
         tail.next = l2
     
     return dummy.next
+
+
+def palindrome_linkedlist(head):
+    if head and head.next is None:
+        return True
+    
+    slow = head
+    fast = head
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+
+    #reverse second half
+    prev = None
+    curr = slow
+    while curr:
+        next_node = curr.next
+        curr.next = prev
+        prev = curr
+        curr = next_node
+    
+    #compare for palindrome 
+    first = head
+    second = prev
+    while second:
+        if first.data != second.data:
+            return False
+        first = first.next
+        second = second.next
+    
+    return True
