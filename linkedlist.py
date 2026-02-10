@@ -70,8 +70,8 @@ head = insertAtHead(head, 5)
 printList(head)
 head = insertAtEnd(head, 40)
 printList(head)
-head = deleteAtHead(head)
-printList(head)
+# head = deleteAtHead(head)
+# printList(head)
 # head = deleteAtEnd(head)
 # printList(head)
 # head = deleteByValue(head, 20)
@@ -95,8 +95,8 @@ def delete_nth_from_end(head, n):
 
     return dummy.next
 
-head = delete_nth_from_end(head, 2)
-printList(head)
+# head = delete_nth_from_end(head, 2)
+# printList(head)
 
 def rev_list(head):
 
@@ -157,8 +157,8 @@ def find_start_of_cycle(head):
     
     return ptr1
 
-check_list = find_start_of_cycle(head)
-print("find cycle : ",check_list)
+# check_list = find_start_of_cycle(head)
+# print("find cycle : ",check_list)
 
 def remove_duplicate_sorted(head):
     if head is None:
@@ -176,5 +176,24 @@ def remove_duplicate_sorted(head):
 
 head = insertAtEnd(head, 40)
 printList(head)
-head = remove_duplicate_sorted(head)
-printList(head)
+# head = remove_duplicate_sorted(head)
+# printList(head)
+
+def merge_sorted_list(l1,l2):
+    dummy = Node(0)
+    tail = dummy
+
+    while l1 and l2:
+        if l1.val < l2.val:
+            tail.next = l1
+            l1 = l1.next
+        else:
+            tail.next = l2
+            l2 = l2.next
+    
+    if l1:
+        tail.next = l1
+    else:
+        tail.next = l2
+    
+    return dummy.next
