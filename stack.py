@@ -29,3 +29,18 @@ def next_greater(arr):
     return result
 
 print(next_greater([4,5,2,10,8]))
+
+def stock_span(prices):
+    n = len(prices)
+    stack = [] 
+    span = [0] * n
+    for i in range(n):
+        while stack and prices[stack[-1]] <= prices[i]:
+            stack.pop()
+        if not stack:
+            span[i] = i + 1
+        else:
+            span[i] = i-stack[-1]
+        stack.append(i)
+    return span
+print(stock_span([100, 80, 60, 70, 60, 75, 85]))
