@@ -1,12 +1,10 @@
 def valid_parenthesis(s):
     stack = []
-
     missing = {
         '}' : '{',
         ')' : '(',
         ']' : '['
     }
-
     for ch in s:
         if stack and ch in missing.values():
             stack.append(ch)
