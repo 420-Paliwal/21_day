@@ -44,3 +44,25 @@ def stock_span(prices):
         stack.append(i)
     return span
 print(stock_span([100, 80, 60, 70, 60, 75, 85]))
+
+class MinStack:
+
+    def __init__(self):
+        self.stack = []
+        self.minstack = []
+
+    def push(self, val):
+        self.stack.append(val)
+        if not self.minstack or val <= self.minstack[-1]:
+            self.minstack.append(val)
+
+    def pop(self):
+        if self.stack[-1] == self.minstack[-1]:
+            self.minstack.pop()
+        self.stack.pop()
+
+    def top(self):
+        return self.stack[-1]
+    
+    def minn(self):
+        return self.minstack[-1]
