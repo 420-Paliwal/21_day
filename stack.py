@@ -66,3 +66,21 @@ class MinStack:
     
     def minn(self):
         return self.minstack[-1]
+
+def next_smaller(arr):
+    n = len(arr)
+    stack = []
+    result = [-1]*n
+
+    for i in range(n-1, -1, -1):
+        while stack and stack[-1] >= arr[i]:
+            stack.pop()
+
+        if stack:
+            result[i] = stack[-1]
+
+        stack.append(arr[i])
+    
+    return result
+
+print(next_smaller([4,8,5,2,25]))
