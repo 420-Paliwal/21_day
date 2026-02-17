@@ -1,5 +1,4 @@
 # Sliding window maximum brute force 
-
 def sliding_window_max(arr, k):
     n = len(arr)
     res = []
@@ -13,7 +12,6 @@ def sliding_window_max(arr, k):
     return res
 
 # Sliding window maximum (OPTIMIZED APPROACH.....)
-
 from collections import deque
 
 def sliding_window_maxx_optimized(arr, k):
@@ -36,7 +34,6 @@ def sliding_window_maxx_optimized(arr, k):
     return res
 
 # Sliding window minimum (OPTIMIZED APPROACH.....)
-
 from collections import deque
 
 def sliding_window_min_optimized(arr, k):
