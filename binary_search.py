@@ -67,3 +67,19 @@ def binary_search_lower_bound(arr, target):
         else:
             low = mid + 1
     return ans
+
+# binary search upper bound
+
+def binary_search_upper_bound(arr, target):
+    low = 0 
+    high = len(arr) - 1
+    ans = -1
+    while low <= high:
+        mid = (low + high)//2
+        if arr[mid] > target:
+            ans = mid
+            high = mid -1
+        else:
+            low = mid + 1
+        
+    return ans
