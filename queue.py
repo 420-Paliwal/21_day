@@ -54,3 +54,25 @@ def sliding_window_min_optimized(arr, k):
             res.append(arr[dq[0]])
         
     return res
+
+# First negative index 
+
+def first_negative(arr, k):
+    n = len(arr)
+    dq = deque()
+    result = []
+
+    for i in range(n):
+        if arr[i] < 0:
+            arr.append(i)
+
+        if dq and dq[0] <= i-k:
+            dq.popleft()
+        
+        if i>=k-1:
+            if dq:
+                result.append(arr[dq[0]])
+            else:
+                result.append(0)
+
+    return result
