@@ -81,5 +81,4 @@ def binary_search_upper_bound(arr, target):
             high = mid -1
         else:
             low = mid + 1
-        
     return ans
