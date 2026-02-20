@@ -3,3 +3,11 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
+
+    def inorder(self, root):
+        if not root:
+            return
+
+        self.inorder(root.left)
+        print(self.val)
+        self.inorder(root.left)
