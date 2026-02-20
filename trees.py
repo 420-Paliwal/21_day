@@ -9,5 +9,22 @@ class TreeNode:
             return
 
         self.inorder(root.left)
-        print(self.val)
+        print(val)
         self.inorder(root.left)
+
+    def height_of_tree(self, root):
+        if not root:
+            return 0
+        
+        left_height = self.height_of_tree(root.left)
+        right_height = self.height_of_tree(root.right)
+
+        return 1+ max(left_height, right_height)
+    
+    
+
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+root.left.left = TreeNode(4)
+root.left.right = TreeNode(5)
