@@ -37,7 +37,6 @@ class TreeNode:
         self.postorder(root.left)
         self.postorder(root.right)
         print(root.val)
-
     
 
 root = TreeNode(1)
