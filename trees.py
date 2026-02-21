@@ -21,6 +21,16 @@ class TreeNode:
 
         return 1+ max(left_height, right_height)
     
+    def preorder(self, root):
+        if not root:
+            return
+        
+        print(root.val)
+        self.preorder(root.left)
+        self.preorder(root.right)
+
+    
+
     
 
 root = TreeNode(1)
