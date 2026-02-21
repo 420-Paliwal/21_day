@@ -38,6 +38,19 @@ class TreeNode:
         self.postorder(root.right)
         print(root.val)
     
+    def diameterOfBinaryTree(root):
+        diameter = 0
+        
+        def height(node):
+            nonlocal diameter
+            if not node:
+                return 0
+            left = height(node.left)
+            right = height(node.right)
+            diameter = max(diameter, left + right)
+            return 1 + max(left, right)
+        height(root)
+        return diameter
 
 root = TreeNode(1)
 root.left = TreeNode(2)
