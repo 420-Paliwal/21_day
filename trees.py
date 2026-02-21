@@ -30,6 +30,13 @@ class TreeNode:
         self.preorder(root.right)
 
     
+    def postorder(self, root):
+        if not root:
+            return
+        
+        self.postorder(root.left)
+        self.postorder(root.right)
+        print(root.val)
 
     
 
