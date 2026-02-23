@@ -51,6 +51,8 @@ class TreeNode:
             return 1 + max(left, right)
         height(root)
         return diameter
+    
+    
     def lowestCommonAncestor(self, root, p, q):
         if not root:
             return None
