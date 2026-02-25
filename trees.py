@@ -77,7 +77,9 @@ class TreeNode:
                 return -1
             
             if abs(left - right) > 1:
-                return -1
+                return -1     
+            return 1 + max(left, right)
+        
         return check(root) != -1
 
 root = TreeNode(1)
