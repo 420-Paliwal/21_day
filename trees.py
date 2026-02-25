@@ -93,6 +93,33 @@ class TreeNode:
 
         return (self.hasPathSum(root.left, remaining) or self.hasPathSum(root.right, remaining))
 
+    def pathSum(self, root, targetSum):
+        result = []
+
+        def dfs(node, remaining, path):
+            if not node:
+                return
+            
+            path.append(node.val)
+
+            if not node.left and node.right:
+                if remaining == node.val:
+                    result.append(path[:])
+            else:
+                dfs(node.left, remaining - node.val, path)    
+                dfs(node.right, remaining - node.val, path)    
+            
+            path.pop()
+        
+        dfs(root, targetSum, [])
+        return result
+
+
+
+
+
+
+
 root = TreeNode(1)
 root.left = TreeNode(2)
 root.right = TreeNode(3)
