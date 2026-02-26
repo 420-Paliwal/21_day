@@ -1,4 +1,4 @@
-def consecutive(arr):
+def longest_consecutive_brute(arr):
     n = len(arr)
     arr.sort()
     max_len = 1
@@ -13,4 +13,6 @@ def consecutive(arr):
     return max(max_len, count)
 
 arr = [100, 4, 200 ,1,2,3]
-print(consecutive(arr))
+print(longest_consecutive_brute(arr))
+
+def longest_consecutive_optimize(arr):
