@@ -32,3 +32,5 @@ def longest_consecutive_optimize(arr):
 
 arr = [100, 4, 200 ,1,2,3]
 print(longest_consecutive_optimize(arr))
+
+
