@@ -54,8 +54,8 @@ def two_sum_using_hashing(arr, k):
     for i in range(n):
         need = k - arr[i]
         if need in hash_arr:
-            res[0] = hash_arr[need]
-            res[1] = i
+            res[0] = need
+            res[1] = arr[i]
             return res
         hash_arr[arr[i]] = i
     return res
