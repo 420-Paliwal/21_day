@@ -13,7 +13,7 @@ def longest_consecutive_brute(arr):
     return max(max_len, count)
 
 arr = [100, 4, 200 ,1,2,3]
-print(longest_consecutive_brute(arr))
+# print(longest_consecutive_brute(arr))
 
 def longest_consecutive_optimize(arr):
     n = len(arr)
@@ -31,4 +31,18 @@ def longest_consecutive_optimize(arr):
     return max_len
 
 arr = [100, 4, 200 ,1,2,3]
-print(longest_consecutive_optimize(arr))
+# print(longest_consecutive_optimize(arr))
+
+def two_sum(arr, k):
+    n = len(arr)
+    res = [-1, -1]
+    for i in range(n):
+        for j in range(i+1, n):
+            sum = arr[i] + arr[j]
+            if sum == k:
+                res[0] = i
+                res[1] = j
+            sum = 0
+    return res
+arr = [100, 4, 200 ,1,2,3]
+print(two_sum(arr, 2000))
