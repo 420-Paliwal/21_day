@@ -46,3 +46,18 @@ def two_sum(arr, k):
     return res
 arr = [100, 4, 200 ,1,2,3]
 print(two_sum(arr, 2000))
+
+def two_sum_using_hashing(arr, k):
+    n = len(arr)
+    res = [-1, -1]
+    hash_arr = {}
+    for i in range(n):
+        need = k - arr[i]
+        if need in hash_arr:
+            res[0] = hash_arr[need]
+            res[1] = i
+            return res
+        hash_arr[arr[i]] = i
+    return res
+arr = [100, 4, 200 ,1,2,3]
+print(two_sum_using_hashing(arr, 2000))
