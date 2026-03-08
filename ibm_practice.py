@@ -123,14 +123,12 @@ def rotate90(matrix):
         row.reverse()
     return matrix
 
-
 def rotate180(matrix):
     n = len(matrix)
     matrix.reverse()
     for row in matrix:
         row.reverse()
     return matrix
-
 
 def rotate270(matrix):
     n = len(matrix)
