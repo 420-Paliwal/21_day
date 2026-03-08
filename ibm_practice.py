@@ -100,3 +100,15 @@ def valid(s):
             stack.append(i)
         
     return len(stack) == 0
+
+def reverse(head):
+    prev = None
+    curr = head
+
+    while curr:
+        next_node = curr.next
+        curr.next = prev
+        prev = curr
+        curr = next_node
+    
+    return prev
