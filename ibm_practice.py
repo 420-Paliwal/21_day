@@ -30,7 +30,6 @@ def longest_consecutive_optimize(arr):
             max_len = max(max_len, count)
     return max_len
 
-arr = [100, 4, 200 ,1,2,3]
 # print(longest_consecutive_optimize(arr))
 
 def two_sum(arr, k):
@@ -44,8 +43,8 @@ def two_sum(arr, k):
                 res[1] = j
             sum = 0
     return res
-arr = [100, 4, 200 ,1,2,3]
-print(two_sum(arr, 2000))
+# arr = [100, 4, 200 ,1,2,3]
+# print(two_sum(arr, 2000))
 
 def two_sum_using_hashing(arr, k):
     n = len(arr)
@@ -59,5 +58,27 @@ def two_sum_using_hashing(arr, k):
             return res
         hash_arr[arr[i]] = i
     return res
+# arr = [100, 4, 200 ,1,2,3]
+# print(two_sum_using_hashing(arr, 2000))
+
+def longest(arr, k):
+    n = len(arr)
+    max_len = 0
+    mp = {}
+    prefix_sum = 0
+    for i in range(n):
+        prefix_sum += arr[i]
+
+        if prefix_sum == k:
+            max_len = i + 1
+        
+        if (prefix_sum - k) in mp:
+            max_len = max(max_len, i - mp[prefix_sum - k])
+
+        if prefix_sum not in mp:
+            mp[prefix_sum] = i
+    return max_len
+
 arr = [100, 4, 200 ,1,2,3]
-print(two_sum_using_hashing(arr, 2000))
+print(longest(arr, 207))
+
