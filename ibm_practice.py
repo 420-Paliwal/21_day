@@ -82,3 +82,21 @@ def longest(arr, k):
 arr = [100, 4, 200 ,1,2,3]
 print(longest(arr, 207))
 
+
+def valid(s):
+    n = len(s)
+    mp = {
+        ")" : "(",
+        "]" : "[",
+        "}" : "{"
+    }
+    stack = []
+    for i in s:
+        if i in mp:
+            if not stack or stack[-1] != mp[i]:
+                return False
+            stack.pop()
+        else:
+            stack.append(i)
+        
+    return len(stack) == 0
