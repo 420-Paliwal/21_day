@@ -113,12 +113,20 @@ def reverse(head):
     
     return prev
 
-def rotate(matrix):
+def rotate90(matrix):
     n = len(matrix)
     for i in range(n):
         for j in range(i,n):
             matrix[i][j], matrix[j][i] = matrix[j][i],matrix[i][j]
         
+    for row in matrix:
+        row.reverse()
+    return matrix
+
+
+def rotate180(matrix):
+    n = len(matrix)
+    matrix.reverse()
     for row in matrix:
         row.reverse()
     return matrix
