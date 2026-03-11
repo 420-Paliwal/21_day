@@ -137,3 +137,28 @@ def rotate270(matrix):
             matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
     matrix.reverse()
     return matrix
+    
+def check_String(str):
+    n = len(str)
+    mp = {}
+    for i in range(n):
+        temp = str[i]
+        new_str = ""
+        for j in range(len(temp)):
+            new_str += temp[j]
+            if new_str not in mp:
+                mp[new_str] = 1
+            else:
+                mp[new_str] += 1
+    print(mp)
+    max_len = 0
+    largest = 0
+    for i in mp:
+        if mp[i] >= max_len:
+            max_len = mp[i]
+            if int(i) > int(largest):
+                largest = i
+    print(largest, max_len)
+    
+arr = ["10001", "10112", "1000", "100"]
+check_String(arr)
