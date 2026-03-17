@@ -28,3 +28,15 @@ def two_sum_sorted(arr, target):
             j -= 1
     return -1
 # print(two_sum_sorted(arr = [2, 7, 11, 15],target = 9))
+
+def two_sum_unsorted(arr, target):
+    n = len(arr)
+    seen = {}
+    for i in range(n):
+        need = target - arr[i]
+        if need in seen:
+            return [seen[need],i]
+        else:
+            seen[arr[i]] = i
+    return -1
+# print(two_sum_unsorted(arr = [11, 15, 2, 7],target = 9))
