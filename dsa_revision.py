@@ -1,3 +1,5 @@
+# RECURSION PRACTICE
+
 def factorial(n):
     if n == 0 or n == 1:
         return 1
@@ -10,3 +12,19 @@ def sum_n(n):
         return n
     return n + sum_n(n - 1)
 # print(sum_n(5))
+
+# ARRAT PRACTICE
+def two_sum_sorted(arr, target):
+    n = len(arr)
+    i = 0
+    j = n-1
+    while i< j:
+        current_sum = arr[i] + arr[j]
+        if current_sum == target:
+            return [i, j]
+        if current_sum < target:
+            i += 1
+        else:
+            j -= 1
+    return -1
+# print(two_sum_sorted(arr = [2, 7, 11, 15],target = 9))
