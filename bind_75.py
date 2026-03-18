@@ -1,4 +1,20 @@
 class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        seen = {}
+        n = len(nums)
+        for i in range(n):
+            need = target - nums[i]
+            if need in seen:
+                return [seen[need], i]
+            seen[nums[i]] = i
+        return -1
+    
+class Solution(object):
     def maxProfit(self, prices):
         """
         :type prices: List[int]
@@ -14,19 +30,3 @@ class Solution(object):
             elif price-min_price>max_profit:
                 max_profit= price-min_price
         return max_profit
-    
-class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        seen = {}
-        n = len(nums)
-        for i in range(n):
-            need = target - nums[i]
-            if need in seen:
-                return [seen[need], i]
-            seen[nums[i]] = i
-        return -1
