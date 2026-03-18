@@ -30,3 +30,17 @@ class Solution(object):
             elif price-min_price>max_profit:
                 max_profit= price-min_price
         return max_profit
+
+class Solution(object):
+    def containsDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        seen = {}
+        for i in nums:
+            if i in seen:
+                return True
+            else:
+                seen[i] = 1
+        return False
