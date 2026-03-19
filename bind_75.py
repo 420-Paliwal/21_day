@@ -75,3 +75,20 @@ class Solution(object):
             if current_sum < 0:
                 current_sum = 0
         return max_sum
+    
+class Solution(object):
+    def maxProduct(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        min_prod = nums[0]
+        max_prod = nums[0]
+        result = nums[0]
+        for num in nums[1:]:
+            if num < 0:
+                min_prod, max_prod = max_prod, min_prod
+            min_prod = min(min_prod*num, num)
+            max_prod = max  (max_prod*num, num)
+            result = max(result, max_prod)
+        return result
