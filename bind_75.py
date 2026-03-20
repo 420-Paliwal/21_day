@@ -109,3 +109,26 @@ class Solution(object):
             elif nums[mid] <= nums[high]:
                 high = mid
         return nums[low]
+    
+class Solution(object):
+    def isAnagram(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        hash_set1 = {}
+        hash_set2 = {}
+        for i in s:
+            if i not in hash_set1:
+                hash_set1[i] = 1
+            else:
+                hash_set1[i] += 1
+        
+        for i in t:
+            if i not in hash_set2:
+                hash_set2[i] = 1
+            else:
+                hash_set2[i] += 1
+        
+        return hash_set1 == hash_set2
