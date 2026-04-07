@@ -55,3 +55,25 @@ def longest_subarray(arr, k):
 
 arr = [10, 14,3,54,33,23,45,43,83,84,22,545,3526,853,5742]
 print(longest_subarray(arr,10000))
+
+class Solution(object):
+    def findMaxAverage(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: float
+        """
+        max_avg = float('-inf')
+        n = len(nums)
+        i = 0
+        summ = 0
+        for j in range(n):
+            summ += nums[j]
+            if j-i >= k:
+                summ -= nums[i]
+                i += 1
+            if j-i == k-1:
+                temp = summ/float(k)
+                if temp > max_avg:
+                    max_avg = temp
+        return max_avg
